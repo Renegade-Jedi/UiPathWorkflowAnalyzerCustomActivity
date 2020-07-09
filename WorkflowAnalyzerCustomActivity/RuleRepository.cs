@@ -12,6 +12,7 @@ using Rule = UiPath.Studio.Activities.Api.Analyzer.Rules.Rule;
 
 namespace WorkflowAnalyzerCustomActivity
 {
+    //Code can not be long because is call for all activities in project
     public class RuleRepository : IRegisterAnalyzerConfiguration
     {
         public void Initialize(IAnalyzerConfigurationService workflowanAlyzerConfigurationService)
@@ -28,6 +29,7 @@ namespace WorkflowAnalyzerCustomActivity
                 LocalizedDisplayName = "Illegal string",
             });
 
+            //Read about all types of Rules from library
             workflowanAlyzerConfigurationService.AddRule<IActivityModel>(forbiddenStringRule);
         }
 
